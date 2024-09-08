@@ -52,6 +52,74 @@ The service manages:
 
 Search books by name or term.
 
+## API Endpoints
+
+### Books Routes
+
+- **Search Books**
+  - `GET /api/books/search`
+  - Query parameters: `name` (string)
+  - Description: Retrieve books by name.
+
+- **Add Book**
+  - `POST /api/books/addBook`
+  - Request body: 
+    ```json
+    {
+      "name": "string",
+      "category": "string",
+      "rentPerDay": "number"
+    }
+    ```
+  - Description: Add a new book.
+
+- **Get All Books**
+  - `GET /api/books/getAllBooks`
+  - Description: Get a list of all books.
+
+- **Get Books by Rent**
+  - `GET /api/books/rent`
+  - Query parameters: 
+    - `minRent` (number)
+    - `maxRent` (number)
+  - Description: Get books within a specified rent range.
+
+- **Get Books by Category and Rent**
+  - `GET /api/books/category-rent`
+  - Query parameters: 
+    - `category` (string)
+    - `name` (string)
+    - `minRent` (number)
+    - `maxRent` (number)
+  - Description: Get books by category and rent range.
+
+### Users Routes
+
+- **Create User**
+  - `POST /api/users`
+  - Request body:
+    ```json
+    {
+      "name": "string",
+      "email": "string"
+    }
+    ```
+  - Description: Create a new user.
+
+### Transactions Routes
+
+- **Issue Book**
+  - `POST /api/transactions/issue`
+  - Description: Issue a book to a user.
+
+- **Return Book**
+  - `POST /api/transactions/return`
+  - Description: Return a book to the library.
+
+- **Get Transaction History**
+  - `GET /api/transactions/history`
+  - Description: Get the transaction history.
+
 **Example:**
 ```bash
 curl "http://localhost:5000/api/books/search?name=example"
