@@ -96,7 +96,7 @@ Search books by name or term.
 ### Users Routes
 
 - **Create User**
-  - `POST /api/users`
+  - `POST /api/users/addUser`
   - Request body:
     ```json
     {
@@ -105,6 +105,30 @@ Search books by name or term.
     }
     ```
   - Description: Create a new user.
+
+- ** Get All User**
+  - `POST /api/users/getAllusers`
+  - Get All Users Information .
+
+
+### Books Routes
+### 1. Create a Book
+
+- **Method**: `POST`
+- **Endpoint**: `https://book-rental-backend-cjen.onrender.com/api/books/addBook`
+- **Description**: Issues a book to a user.
+- **Request Body**:
+  ```json
+  {
+    "name": "Enter book name",
+    "category": "describe category",
+    "rentPerDay": "describe book rent"
+  }
+### 2. Get All Book
+
+- **Method**: `GET`
+- **Endpoint**: `https://book-rental-backend-cjen.onrender.com/api/books/getAllBooks`
+- **Description**: Get All Books Information.
 
 ### Transactions Routes
 ### 1. Issue a Book
